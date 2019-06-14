@@ -1,0 +1,29 @@
+{
+  "name": "express-ads-api",
+  "version": "1.0.0",
+  "description": "Building and Securing RESTful APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HananNayberg/express-ads-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HananNayberg/express-ads-api/issues"
+  },
+  "homepage": "https://github.com/HananNayberg/express-ads-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "mongodb": "^3.2.7",
+    "mongodb-memory-server": "^5.1.4",
+    "morgan": "^1.9.1"
+  }
+}
