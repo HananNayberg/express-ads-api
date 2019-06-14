@@ -8,6 +8,9 @@ const morgan = require('morgan');
 
 const app = express();
 
+const {startDatabase} = require('./database/mongo');
+const {insertAd, getAds} = require('./database/ads');
+
 const ads = [
 {title: 'Hello, world 2'},
 {title: 'hippie kay yey'}
@@ -23,10 +26,14 @@ app.use(cors());
 app.use(morgan('combined'));
 
 
-app.get('/', (req,res) => {
-    res.send(ads);
+app.get('/', async (req,res) => {
+    res.send(await getAds());
 });
 
-app.listen(3001, ()=>{
+startDatabase().then(async () => {
+    await insertAd({title: 'Hello, now from the in-memory database!'});
+
+app.listen(3001, async ()=>{
     console.log('listening on port 3001');
+    });
 });
